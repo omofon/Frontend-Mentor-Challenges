@@ -1,0 +1,21 @@
+body {
+  background: #f4d465;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  box-sizing: content-box;
+  height: auto;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 2px rgb(0, 0, 0);
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
