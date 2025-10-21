@@ -25,14 +25,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub Project](https://github.com/omofon/Frontend-Mentor-Challenges/tree/72926256849362392c665abcaaad553ff316efa0/Blog%20Preview%20Card)
+- Live Site URL: [Live Site](https://frontend-mentor-challenges-henna-two.vercel.app/)
 
 ## My process
+
+I took reference from the styling in the figma file to work on this.
 
 ### Built with
 
