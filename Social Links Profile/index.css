@@ -25,5 +25,69 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  transition: transform 0.3s ease;
 }
 
+.card:hover {
+  transform: scale(1.005);
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+.profile img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: block;
+}
+
+.profile .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.location {
+  margin: 0;
+  font-weight: 400;
+  color: var(--green);
+}
+
+.description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links .btn {
+  box-sizing: content-box;
+  background: var(--grey-700);
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px 0;
+  text-align: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 0 16px var(--grey-700);
+}
+.btn:active {
+  transform: translateY(4px);
+}
