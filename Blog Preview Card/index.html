@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- 
+      🔹 HEAD SECTION
+      Contains meta information, title, favicon, and stylesheet link.
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | Blog Preview Card</title>
+
+    <!-- Website favicon (small icon in browser tab) -->
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
+
+    <!-- External CSS file for styling -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- 
+      🔹 MAIN CARD CONTAINER
+      Wraps the entire blog preview card, including image, text content, and author info.
+    -->
     <div class="card">
+      
+      <!-- 
+        🖼️ IMAGE SECTION
+        Displays the blog illustration or thumbnail image.
+      -->
       <div class="image-box">
         <img src="./assets/images/illustration-article.svg" alt="card-img" />
       </div>
+
+      <!-- 
+        📝 CONTENT SECTION
+        Includes the category tag, publication date, title, and description.
+      -->
       <div class="content">
+        
+        <!-- Category tag or label -->
         <div class="tag">
           <span>Learning</span>
         </div>
+
+        <!-- Publication date -->
         <div class="timelog">Published 21 Dec 2023</div>
+
+        <!-- Blog post title -->
         <div class="title">HTML & CSS foundations</div>
+
+        <!-- Brief description or excerpt of the article -->
         <div class="description">
           These languages are the backbone of every website, defining structure,
           content, and presentation.
         </div>
       </div>
+
+      <!-- 
+        👤 AUTHOR SECTION
+        Shows the author's avatar and name.
+      -->
       <div class="author">
         <img src="./assets/images/image-avatar.webp" alt="author-avatar" />
         <span>Greg Hooper</span>
       </div>
     </div>
+
+    <!-- 
+      🔗 ATTRIBUTION SECTION
+      Provides credit to Frontend Mentor and the coder (your GitHub link).
+    -->
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
