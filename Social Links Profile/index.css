@@ -17,6 +17,13 @@ body {
   padding: 2rem;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 /* Card */
 .card {
   background: var(--grey-800);
@@ -83,25 +90,37 @@ body {
   width: 100%;
 }
 
-.links .btn {
+/* Buttons */
+.links button {
   background: var(--grey-700);
+  border: none;
   border-radius: 10px;
   padding: 14px 0;
   text-align: center;
   font-weight: 600;
   font-size: 0.95rem;
+  color: white;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.btn:hover {
+/* Hover */
+.links button:hover {
   background: var(--green);
   color: var(--grey-900);
   box-shadow: 0 0 12px var(--green);
 }
 
-.btn:active {
+/* Active */
+.links button:active {
   transform: translateY(2px);
+}
+
+/* Focus (keyboard accessibility) */
+.links button:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  box-shadow: 0 0 8px var(--green);
 }
 
 /* Responsive Layout */
@@ -129,7 +148,7 @@ body {
     font-size: 0.85rem;
   }
 
-  .links .btn {
+  .links button {
     font-size: 0.9rem;
     padding: 12px 0;
   }
