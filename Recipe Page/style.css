@@ -4,7 +4,9 @@
 .attribution {
   font-size: 11px;
   text-align: center;
+  padding: 1rem;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
@@ -24,18 +26,268 @@
 body {
   font-family: "Outfit", sans-serif;
   font-size: 16px;
-
-  background: var(--rose-50);
+  line-height: 1.5;
+  background: var(--stone-100);
   color: var(--stone-600);
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 0;
 }
 
-h1,
+main {
+  padding: 7.75rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Article Styles */
+.recipe-card {
+  max-width: 46rem;
+  width: 100%;
+  padding: 2.5rem;
+  background: var(--white);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 1rem;
+}
+
+/* Header Styles */
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.banner img {
+  width: 100%;
+  border-radius: 0.75rem;
+  display: block;
+  margin: 0;
+}
+
+.banner h1 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--stone-900);
+  margin: 0;
+}
+
+.banner p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Prep Section Styles */
+.prep-time {
+  background: var(--rose-50);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+}
+
+.prep-time h3 {
+  margin: 0 0 1rem 0;
+  color: var(--rose-800);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.prep-time ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.prep-time ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.prep-time ul li:last-child {
+  margin-bottom: 0;
+}
+
+.prep-time ul li::before {
+  content: "▪";
+  color: var(--rose-800);
+  position: absolute;
+  left: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Ingredients Section Styles */
 h2 {
   font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: var(--brown-800);
+  margin: 0 0 1.5rem 0;
+}
+
+.ingredients ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 2rem 0;
+}
+
+.ingredients ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.ingredients ul li:last-child {
+  margin-bottom: 0;
+}
+
+.ingredients ul li::before {
+  content: "▪";
+  color: var(--brown-800);
+  position: absolute;
+  left: 0.5rem;
+  font-size: 0.875rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--stone-150);
+  margin: 0;
+}
+
+/* Instructions Section Styles */
+.instructions ol {
+  list-style-type: none;
+  counter-reset: instruction-counter;
+  padding-left: 0;
+  margin: 0 0 2rem 0;
+}
+
+.instructions ol li {
+  font-family: "Outfit", sans-serif;
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  position: relative;
+  counter-increment: instruction-counter;
+}
+
+.instructions ol li:last-child {
+  margin-bottom: 0;
+}
+
+.instructions ol li::before {
+  content: counter(instruction-counter) ".";
+  font-family: "Outfit", sans-serif;
+  color: var(--brown-800);
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+}
+
+/* Nutrition Section Style */
+.nutrition p {
+  margin: 0 0 1.5rem 0;
+}
+
+.nutrition table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutrition table tr {
+  border-bottom: 1px solid var(--stone-150);
+}
+
+.nutrition table tr:last-child {
+  border-bottom: none;
+}
+
+.nutrition table td {
+  padding: 0.75rem 2rem;
+}
+
+.nutrition table td:first-child {
+  padding-left: 2rem;
+}
+
+.nutrition table td:last-child {
+  font-weight: 700;
+  color: var(--brown-800);
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    justify-content: flex-start;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .recipe-card {
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .banner {
+    gap: 2rem;
+  }
+
+  .banner img {
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  .banner h1 {
+    font-size: 2.25rem;
+    padding: 0 2rem;
+  }
+
+  .banner p {
+    padding: 0 2rem;
+  }
+
+  .prep-time,
+  .ingredients,
+  .instructions,
+  .nutrition {
+    padding: 0 2rem;
+  }
+
+  .nutrition table td:first-child {
+    padding-left: 0;
+  }
+
+  .nutrition table td:last-child {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
 }
