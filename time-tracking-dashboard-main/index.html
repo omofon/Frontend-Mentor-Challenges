@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+  </head>
+  <body
+    class="bg-navy-950 min-h-screen pt-14 pb-10 px-6 font-sans text-navy-200"
+  >
+    <main
+      class="w-full max-w-sm mx-auto grid grid-cols-1 gap-6 lg:max-w-6xl lg:grid-cols-4 lg:grid-rows-2 lg:gap-8 lg:p-14"
+    >
+      <!-- User Profile -->
+      <article
+        class="profile-card bg-navy-900 rounded-xl overflow-hidden lg:row-span-2"
+      >
+        <!-- Profile Card -->
+        <section
+          class="profile-card__report bg-purple-500 p-8 flex items-center gap-4 rounded-xl lg:flex-col lg:items-start lg:h-3/4 lg:justify-start"
+        >
+          <img
+            class="profile-card__avatar w-16 h-16 rounded-full border-2 border-white lg:w-20 lg:h-20"
+            src="./images/image-jeremy.png"
+            alt="Jeremy Robson Avatar"
+          />
+          <div class="profile-card__user-info lg:pt-6">
+            <p class="profile-card__label text-sm text-navy-200">Report for</p>
+            <h2
+              class="profile-card__name text-3xl font-light text-white lg:text-4xl"
+            >
+              Jeremy Robson
+            </h2>
+          </div>
+        </section>
+
+        <nav class="profile-card__time-controls p-6 lg:pt-4 lg:pb-4">
+          <ul
+            class="time-controls__list flex justify-around align-middle lg:flex-col lg:gap-3"
+          >
+            <li class="time-controls__item">
+              <button class="time-controls__button" data-period="daily">
+                Daily
+              </button>
+            </li>
+            <li class="time-controls__item">
+              <button
+                class="time-controls__button time-controls__button--active"
+                data-period="weekly"
+              >
+                Weekly
+              </button>
+            </li>
+            <li class="time-controls__item">
+              <button class="time-controls__button" data-period="monthly">
+                Monthly
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </article>
+
+      <!-- Activity Card: Work -->
+      <article
+        class="activity-card activity-card--work bg-activity-work rounded-xl overflow-hidden relative"
+      >
+        <div class="activity-card__decorative-header">
+          <img src="./images/icon-work.svg" alt="Briefcase icon" />
+        </div>
+
+        <div class="activity-card__content-box">
+          <div class="activity-card__heading">
+            <h3 class="activity-card__title text-lg font-medium text-white">
+              Work
+            </h3>
+            <button class="activity-card__menu-btn">
+              <img src="./images/icon-ellipsis.svg" alt="Options menu icon" />
+            </button>
+          </div>
+
+          <div class="activity-card__time-data">
+            <h1 class="activity-card__current-time">32hrs</h1>
+            <p class="activity-card__previous-time">Last Week - 36hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Activity Card: Play -->
+      <article
+        class="activity-card activity-card--play bg-activity-play rounded-xl overflow-hidden relative"
+      >
+        <div class="activity-card__decorative-header">
+          <img src="./images/icon-play.svg" alt="Game console icon" />
+        </div>
+        <div class="activity-card__content-box">
+          <div class="activity-card__heading">
+            <h3 class="activity-card__title text-lg font-medium text-white">
+              Play
+            </h3>
+            <button class="activity-card__menu-btn">
+              <img src="./images/icon-ellipsis.svg" alt="Options menu icon" />
+            </button>
+          </div>
+          <div class="activity-card__time-data">
+            <h1 class="activity-card__current-time">10hrs</h1>
+            <p class="activity-card__previous-time">Last Week - 8hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Activity Card: Study -->
+      <article
+        class="activity-card activity-card--study bg-activity-study rounded-xl overflow-hidden relative"
+      >
+        <div class="activity-card__decorative-header">
+          <img src="./images/icon-study.svg" alt="Open book icon" />
+        </div>
+        <div class="activity-card__content-box">
+          <div class="activity-card__heading">
+            <h3 class="activity-card__title text-lg font-medium text-white">
+              Study
+            </h3>
+            <button class="activity-card__menu-btn">
+              <img src="./images/icon-ellipsis.svg" alt="Options menu icon" />
+            </button>
+          </div>
+          <div class="activity-card__time-data">
+            <h1 class="activity-card__current-time">4hrs</h1>
+            <p class="activity-card__previous-time">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Activity Card: Exercise -->
+      <article
+        class="activity-card activity-card--exercise bg-activity-exercise rounded-xl overflow-hidden relative"
+      >
+        <div class="activity-card__decorative-header">
+          <img src="./images/icon-exercise.svg" alt="Man running icon" />
+        </div>
+        <div class="activity-card__content-box">
+          <div class="activity-card__heading">
+            <h3 class="activity-card__title text-lg font-medium text-white">
+              Exercise
+            </h3>
+            <button class="activity-card__menu-btn">
+              <img src="./images/icon-ellipsis.svg" alt="Options menu icon" />
+            </button>
+          </div>
+          <div class="activity-card__time-data">
+            <h1 class="activity-card__current-time">4hrs</h1>
+            <p class="activity-card__previous-time">Last Week - 5hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Activity Card: Social -->
+      <article
+        class="activity-card activity-card--social bg-activity-social rounded-xl overflow-hidden relative"
+      >
+        <div class="activity-card__decorative-header">
+          <img src="./images/icon-social.svg" alt="Two chats icon" />
+        </div>
+        <div class="activity-card__content-box">
+          <div class="activity-card__heading">
+            <h3 class="activity-card__title text-lg font-medium text-white">
+              Social
+            </h3>
+            <button class="activity-card__menu-btn">
+              <img src="./images/icon-ellipsis.svg" alt="Options menu icon" />
+            </button>
+          </div>
+          <div class="activity-card__time-data">
+            <h1 class="activity-card__current-time">5hrs</h1>
+            <p class="activity-card__previous-time">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Activity Card: Self Care -->
+      <article
+        class="activity-card activity-card--self-care bg-activity-selfcare rounded-xl overflow-hidden relative"
+      >
+        <div class="activity-card__decorative-header">
+          <img src="./images/icon-self-care.svg" alt="Love icon woth cross" />
+        </div>
+        <div class="activity-card__content-box">
+          <div class="activity-card__heading">
+            <h3 class="activity-card__title text-lg font-medium text-white">
+              Self Care
+            </h3>
+            <button class="activity-card__menu-btn">
+              <img src="./images/icon-ellipsis.svg" alt="Options menu icon" />
+            </button>
+          </div>
+          <div class="activity-card__time-data">
+            <h1 class="activity-card__current-time">2hrs</h1>
+            <p class="activity-card__previous-time">Last Week - 2hrs</p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/omofon">Omofon</a>.
+    </footer>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

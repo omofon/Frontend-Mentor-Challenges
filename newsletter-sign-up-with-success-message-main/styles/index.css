@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  /* Primary Colors */
+  --color-red: hsl(4, 100%, 67%);
+  --color-red-light: hsl(4, 100%, 97%);
+
+  /* Neutral Colors */
+  --color-blue-800: hsl(234, 29%, 20%);
+  --color-blue-700: hsl(235, 18%, 26%);
+  --color-grey-dark: hsl(231, 7%, 60%);
+  --color-grey-light: hsl(0, 0%, 92%);
+  --color-white: hsl(0, 0%, 100%);
+
+  /* Custom Gradient Stop for Button Hover */
+  --color-pink-500: hsl(330, 93%, 64%);
+
+  /* Typography */
+  --font-size-nm: 16px;
+  --font-weight-reg: 400;
+  --font-weight-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Mobile-first Styling */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: var(--font-weight-reg);
+  font-size: var(--font-size-nm);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-blue-800);
+  min-height: 100dvh;
+}
+
+h1 {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-blue-800);
+}
+
+.newsletter-signup {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 0;
+  background: var(--color-white);
+  min-height: 100dvh;
+}
+
+.illustration-section {
+  order: 1;
+}
+
+.signup-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.form-content {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+/* Feature List */
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.feature-list li::before {
+  content: "";
+  background-image: url("/assets/images/icon-list.svg");
+  width: 1.35rem;
+  height: 1.35rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* Subscribe Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.email-label {
+  display: block;
+  font-weight: var(--font-weight-bold);
+  font-size: 0.75rem;
+  color: var(--color-blue-800);
+}
+
+.email-error {
+  color: var(--color-red);
+  font-weight: var(--font-weight-bold);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-grey-dark);
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease-in-out;
+  color: var(--color-blue-800);
+}
+
+.signup-form input::placeholder {
+  color: var(--color-grey-dark);
+  opacity: 0.6;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: var(--color-blue-700);
+  box-shadow: 0 0 0 1px var(--color-blue-700);
+}
+
+.signup-form input.invalid {
+  background-color: var(--color-red-light);
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+}
+
+.signup-form input.invalid:focus {
+  outline: none;
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 1px var(--color-red);
+}
+
+/* Button Styling (Subscribe & Dismiss) */
+.submit-button,
+.dismiss-button {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--color-blue-700);
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button Hover/Active State */
+.submit-button:hover,
+.submit-button:focus,
+.dismiss-button:hover,
+.dismiss-button:focus {
+  background: linear-gradient(
+    to right,
+    var(--color-red),
+    var(--color-pink-500)
+  );
+  box-shadow: 0 15px 25px rgba(255, 98, 87, 0.45);
+}
+
+/* --- Desktop/Tablet Layout (768px and up) --- */
+@media (min-width: 768px) {
+  body {
+    background-color: var(--color-blue-700);
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .newsletter-signup {
+    flex-direction: row;
+    max-width: 58rem;
+    height: 40rem;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    min-height: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Form Content (Left Side) */
+  .form-content {
+    order: 1;
+    padding: 1.25rem;
+    justify-content: center;
+    flex: 1;
+    flex-grow: 1;
+    max-width: 25rem;
+  }
+
+  .form-info h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Illustration Section (Right Side) */
+  .illustration-section {
+    order: 2;
+    flex: 1;
+    display: flex;
+    align-items: flex-end; 
+    padding: 0;
+    height: 100%;
+    max-width: 48%; 
+  }
+
+  .signup-image {
+    display: block;
+    width: 100%;
+    height: auto; 
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+  }
+
+  .form-content {
+    gap: 1rem;
+    margin-bottom: 0;
+  }
+
+  .form-info {
+    margin-bottom: 1rem;
+  }
+
+  .feature-list {
+    margin-top: 1rem;
+  }
+
+  .attribution {
+    color: var(--color-white);
+  }
+}
+
+/* --- Success Message Styling (Mobile Default) --- */
+.success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100dvh;
+  width: 100%;
+  padding: 15vh 1.5rem 2.5rem 1.5rem;
+  background: var(--color-white);
+}
+
+.success-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.success-icon {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.success-message h1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+.success-message p {
+  line-height: 1.5;
+}
+
+.success-message strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-blue-800);
+}
+
+.success-message .dismiss-button {
+  margin-top: auto;
+}
+
+/* --- Success Message Styling (Desktop/Tablet) --- */
+@media (min-width: 768px) {
+  .success-message {
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    width: 100vw;
+    background-color: var(--color-blue-700);
+    padding: 0;
+  }
+
+  .success-content {
+    width: 32rem;
+    padding: 3rem;
+    padding-top: 4rem;
+    background: var(--color-white);
+    border-radius: 2rem;
+    height: auto;
+    flex-grow: 0;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .success-content h1 {
+    font-weight: var(--font-weight-bold);
+    font-size: 3.5rem;
+  }
+
+  .success-content p {
+    margin-bottom: 2rem;
+  }
+
+  .success-message .dismiss-button {
+    margin-top: 0;
+  }
+}
+
+/* Utility Class */
+.hidden {
+  display: none !important;
+}
+
+/* --- Attribution Footer --- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--color-blue-800);
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+.attribution a {
+  color: var(--color-red);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Desktop Attribution Color */
+@media (min-width: 768px) {
+    .attribution {
+        color: var(--color-white); 
+    }
+}

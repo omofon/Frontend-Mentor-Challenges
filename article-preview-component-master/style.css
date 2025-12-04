@@ -1,0 +1,321 @@
+/* --- Variables & Reset --- */
+:root {
+  --color-very-dark-blue: hsl(217, 19%, 35%);
+  --color-desaturated-dark-blue: hsl(214, 17%, 51%);
+  --color-grayish-blue: hsl(212, 23%, 69%);
+  --color-light-grayish-blue: hsl(210, 46%, 95%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --font-size-body: 13px;
+  --font-weight-normal: 500;
+  --font-weight-bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--color-light-grayish-blue);
+  color: var(--color-very-dark-blue);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Card Container (Desktop Dimensions) --- */
+.card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.5);
+
+  width: 730px;
+  height: 280px;
+
+  display: flex;
+}
+
+/* --- Left Image Section --- */
+.image-container {
+  width: 285px;
+  height: 100%;
+  flex-shrink: 0;
+  background-color: #6d8c92;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Right Content Section --- */
+.content-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Headline */
+.content-container h1 {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0.25px;
+  color: var(--color-very-dark-blue);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 12px;
+}
+
+/* Paragraph */
+.content-container p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-desaturated-dark-blue);
+  margin-bottom: 20px;
+}
+
+/* --- Footer / Avatar Section --- */
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  position: relative;
+}
+
+.avatar-box {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.avatar-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-info h2 {
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-very-dark-blue);
+  line-height: 1.2;
+}
+
+.avatar-info time {
+  font-size: 13px;
+  color: var(--color-grayish-blue);
+  font-weight: var(--font-weight-normal);
+}
+
+/* --- Share Button --- */
+.share-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-light-grayish-blue);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  transition: all 0.2s ease;
+}
+
+.share-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.share-icon svg path {
+  fill: var(--color-desaturated-dark-blue);
+  transition: fill 0.2s ease;
+}
+
+.share-icon:hover {
+  background-color: var(--color-desaturated-dark-blue);
+}
+
+.share-icon:hover svg path {
+  fill: var(--color-white);
+}
+
+.share-icon.active-state {
+  background-color: var(--color-desaturated-dark-blue);
+}
+
+.share-icon.active-state svg path {
+  fill: var(--color-white);
+}
+
+/* --- Share Tooltip --- */
+.share-tooltip {
+  position: absolute;
+  background-color: var(--color-very-dark-blue);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 36px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+  bottom: 55px;
+  right: -119px;
+
+  /* Animation States */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.share-tooltip.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.share-tooltip span {
+  color: var(--color-grayish-blue);
+  letter-spacing: 5px;
+  font-size: 0.875rem;
+  margin-right: 4px;
+}
+
+.share-tooltip a {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.share-tooltip a:hover {
+  transform: scale(1.1);
+}
+
+.share-tooltip svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-white);
+}
+
+.share-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: var(--color-very-dark-blue) transparent transparent transparent;
+}
+
+/* --- Attribution Styling --- */
+.attribution {
+  margin-top: 20px;
+  font-size: 11px;
+  text-align: center;
+  color: var(--color-grayish-blue);
+}
+.attribution a {
+  color: var(--color-desaturated-dark-blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    width: 327px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .content-container {
+    padding: 32px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .avatar-container {
+    position: static;
+  }
+
+  .content-container h1 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .share-tooltip {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    border-radius: 0 0 10px 10px;
+    padding: 0 32px;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+    box-shadow: none;
+  }
+
+  .share-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .share-tooltip::after {
+    display: none;
+  }
+}
